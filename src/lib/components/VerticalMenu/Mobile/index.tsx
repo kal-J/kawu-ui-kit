@@ -3,7 +3,12 @@ import { useState } from "react";
 import { NavigationMenuItem, VerticalMenuPropTypes } from "../../../types";
 import ClickAwayListener from "react-click-away-listener";
 
-const MobileVerticalMenu = ({ menus }: VerticalMenuPropTypes) => {
+const MobileVerticalMenu = ({
+  menus,
+  title,
+  containerClassNames,
+  menuType,
+}: VerticalMenuPropTypes) => {
   const [activeMenu, setActiveMenu] = useState("");
 
   const handleMenuClick = (e: React.MouseEvent, menu: NavigationMenuItem) => {
@@ -13,11 +18,13 @@ const MobileVerticalMenu = ({ menus }: VerticalMenuPropTypes) => {
   };
 
   return (
-    <div className="flex h-screen w-16 flex-col justify-between border-r bg-white md:hidden">
+    <div
+      className={`flex h-full min-h-full max-h-full w-16 flex-col justify-between border-r bg-white ${menuType ==='mobile' ? '!block !lg:block' : "lg:hidden"} lg:hidden ${containerClassNames}`}
+    >
       <div>
         <div className="inline-flex h-16 w-16 items-center justify-center">
           <span className="flex justify-center items-center text-gray-500 h-10 w-10  rounded-lg bg-gray-200">
-            F
+            {title}
           </span>
         </div>
 
@@ -26,7 +33,7 @@ const MobileVerticalMenu = ({ menus }: VerticalMenuPropTypes) => {
             <ul className="space-y-sm border-gray-100 pt-xs">
               {menus?.map((menu, index) => {
                 return (
-                  <li key={`${index}`} className="py-2">
+                  <li title={menu?.name} key={`${index}`} className="py-2">
                     <a
                       href="#"
                       onClick={(e) => {
@@ -49,20 +56,20 @@ const MobileVerticalMenu = ({ menus }: VerticalMenuPropTypes) => {
                           onClickAway={() => setActiveMenu("")}
                         >
                           <span
-                            className={`absolute border left-full top-0 ml-2 px-2 py-1.5 font-medium opacity-100 z-[500] group-hover:opacity-100 group-active:opacity-100 group-hover:bg-gray-50 group-active:bg-gray-50 hover:bg-gray-50 active:bg-gray-50 w-40 group-active:block group-hover:block ${
+                            className={`absolute border left-full top-0 ml-2 px-2 py-1.5 font-medium opacity-100 z-[99999] group-hover:opacity-100 group-active:opacity-100 group-hover:bg-gray-50 group-active:bg-gray-50 hover:bg-gray-50 active:bg-gray-50 w-40 group-active:block group-hover:block ${
                               activeMenu == menu.name ? "" : "hidden"
                             }`}
                           >
                             <nav
                               v-for="item in menu?.items"
-                              className="flex flex-col space-y-4 border-l-[3px] border-green-500"
+                              className="flex flex-col space-y-2 border-l-[3px] border-primary-500"
                             >
                               {menu?.items?.map((item, index) => {
                                 return (
                                   <div
                                     onClick={() => item?.onClickHandler()}
                                     key={item?.id || index}
-                                    className={`flex items-center  px-4 py-3 hover:text-green-700 hover:bg-green-50 active:bg-green-50 active:text-green-700 ${
+                                    className={`flex items-center  px-4 py-1 hover:text-primary-700 hover:bg-primary-50 active:bg-primary-50 active:text-primary-700 ${
                                       item?.active ? "text-active" : ""
                                     }`}
                                   >

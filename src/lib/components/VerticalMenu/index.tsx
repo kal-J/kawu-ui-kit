@@ -1,14 +1,48 @@
 import { VerticalMenuPropTypes } from "../../types";
 import DesktopVerticalMenu from "./Desktop";
 import MobileVerticalMenu from "./Mobile";
+import "../../../index.css";
 
-const VerticatMenu = ({menus} : VerticalMenuPropTypes) => {
-    return(
+const VerticatMenu = ({
+  menus,
+  title,
+  containerClassNames,
+  menuType,
+}: VerticalMenuPropTypes) => {
+  return (
     <>
-    <DesktopVerticalMenu menus={menus}/>
-    <MobileVerticalMenu menus={menus}/>
+      {menuType === "mobile" ? (
+        <MobileVerticalMenu
+          containerClassNames={containerClassNames}
+          title={title}
+          menus={menus}
+          menuType={menuType}
+        />
+      ) : menuType === "desktop" ? (
+        <DesktopVerticalMenu
+          containerClassNames={containerClassNames}
+          title={title}
+          menus={menus}
+          menuType={menuType}
+        />
+      ) : (
+        <>
+          <DesktopVerticalMenu
+            containerClassNames={containerClassNames}
+            title={title}
+            menus={menus}
+            menuType={menuType}
+          />
+          <MobileVerticalMenu
+            containerClassNames={containerClassNames}
+            title={title}
+            menus={menus}
+            menuType={menuType}
+          />
+        </>
+      )}
     </>
-    );
-}
+  );
+};
 
 export default VerticatMenu;

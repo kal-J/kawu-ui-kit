@@ -1,18 +1,21 @@
 {
   "name": "tiv-ui-kit",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0-beta.35",
   "type": "module",
   "description": "TIV UI kit",
   "files": [
     "dist/*"
   ],
-  "main": "./dist/tiv-ui-kit.cjs",
-  "module": "./dist/tiv-ui-kit.esm.js",
+  "main": "./dist/tiv-ui-kit.umd.js",
+  "module": "./dist/tiv-ui-kit.es.js",
   "exports": {
     ".": {
-      "import": "./dist/tiv-ui-kit.esm.js",
-      "require": "./dist/ta-ui-kit.cjs"
+      "import": "./dist/tiv-ui-kit.es.js",
+      "require": "./dist/ta-ui-kit.umd.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "scripts": {

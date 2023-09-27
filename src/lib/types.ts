@@ -14,7 +14,10 @@ type NavigationMenuItem = {
 
 type VerticalMenuPropTypes = {
   menus: Array<NavigationMenuItem>;
+  title?: string;
+  containerClassNames?: string;
   logout?: () => void;
+  menuType?: string;
 };
 
 export type { NavigationMenuItem, VerticalMenuPropTypes };

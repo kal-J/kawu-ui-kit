@@ -1,3 +1,3 @@
-import VerticatMenu from "./components/VerticalMenu";
+import VerticalMenu from "./components/VerticalMenu";
 
-export {VerticatMenu};
+export {VerticalMenu};

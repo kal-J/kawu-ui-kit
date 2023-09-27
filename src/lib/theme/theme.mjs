@@ -9,16 +9,17 @@ const palette = {
   black: colors.black,
   white: colors.white,
   gray: colors.gray,
+  slate: colors.slate,
 };
 const themeColors = {
   background: palette.white,
   foreground: palette.black,
-  primary: palette.green,
+  primary: palette.orange,
   secondary: palette.orange,
   success: palette.green,
   danger: palette.red,
   failure: palette.red,
-  active: palette.green["700"],
+  active: palette.orange["600"],
   "side-menu-bg": "#fbfbfb",
 };
 
