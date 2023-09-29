@@ -1,4 +1,5 @@
 // import { v4 as uuidv4 } from "uuid";
+import { ChevronDown, ChevronRight } from "react-feather";
 import { VerticalMenuPropTypes } from "../../../types";
 
 const DesktopVerticalMenu = ({
@@ -8,7 +9,9 @@ const DesktopVerticalMenu = ({
 }: VerticalMenuPropTypes) => {
   return (
     <div
-      className={`relative ${menuType === "desktop" ? "!block !lg:block" : "hidden lg:block"} hidden lg:block h-full w-60 bg-gray-100 overflow-y-auto no-scrollbar transition-all duration-1000 ${containerClassNames}`}
+      className={`relative ${
+        menuType === "desktop" ? "!block !lg:block" : "hidden lg:block"
+      } hidden lg:block h-full w-60 bg-gray-100 overflow-y-auto no-scrollbar transition-all duration-1000 ${containerClassNames}`}
     >
       {/* <div className="h-16 px-6"></div> */}
 
@@ -22,11 +25,17 @@ const DesktopVerticalMenu = ({
                 className="bg-white flex space-x-4 cursor-pointer my-1 border-r"
               >
                 <span className="h-12 w-2 bg-primary-600"></span>
-                <div className="h-12 flex items-center space-x-4 text-primary-600">
-                  {menu?.icon && (
-                    <span className="h-5 w-5 opacity-75">{menu?.icon}</span>
-                  )}
-                  <span className="font-normal">{menu?.name}</span>
+                <div className="h-12 w-full flex items-center space-x-4 text-primary-600">
+                  <div className="w-full flex items-center space-x-4">
+                    {menu?.icon && (
+                      <span className="h-5 w-5 opacity-75">{menu?.icon}</span>
+                    )}
+                    <span className="font-normal w-fit">{menu?.name}</span>
+                  </div>
+
+                  <div className="flex items-center justify-end px-4">
+                    {(menu?.items?.length > 0) &&  <ChevronDown className="h-4 w-4 text-gray-400 font-thin" />}
+                  </div>
                 </div>
               </div>
             )}
@@ -34,16 +43,21 @@ const DesktopVerticalMenu = ({
             {!menu.active && (
               <div
                 onClick={() => menu?.onClickHandler()}
-                className="relative overflow-hidden bg-transparent flex space-x-2 group transition-all duration-1000 cursor-pointer my-1 border-b-2 border-gray-200"
+                className="relative overflow-hidden bg-transparent flex space-x-2 group transition-all duration-1000 cursor-pointer my-1 "
               >
                 <span className="h-12 scale-y-0 group-hover:scale-y-100 relative group-hover:opacity-100 opacity-0 w-2 group-hover:bg-primary-600 duration-700 transition-all ease-in-out"></span>
                 <div className="absolute inset-0 w-0 bg-white transition-all duration-300 ease-out group-hover:w-full"></div>
 
-                <div className="h-12 relative flex items-center space-x-4 pl-2 group-hover:text-primary-600">
-                  {menu?.icon && (
-                    <span className="h-5 w-5 opacity-75">{menu?.icon}</span>
-                  )}
-                  <span className="font-normal">{menu?.name}</span>
+                <div className="h-12 w-full relative flex items-center space-x-4 pl-2 group-hover:text-primary-600">
+                  <div className="w-full flex items-center space-x-4">
+                    {menu?.icon && (
+                      <span className="h-5 w-5 opacity-75">{menu?.icon}</span>
+                    )}
+                    <span className="font-normal w-fit">{menu?.name}</span>
+                  </div>
+                  <div className="flex items-center justify-end px-4">
+                    {(menu?.items?.length > 0) && <ChevronRight className="h-4 w-4 text-gray-400 font-thin" />}
+                  </div>
                 </div>
               </div>
             )}
