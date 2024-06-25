@@ -1,6 +1,6 @@
 {
   "name": "kawu-ui-kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "description": "Kawu UI kit",
   "files": [
@@ -11,7 +11,7 @@
   "exports": {
     ".": {
       "import": "./dist/kawu-ui-kit.es.js",
-      "require": "./dist/ta-ui-kit.umd.js"
+      "require": "./dist/kawu-ui-kit.umd.js"
     },
     "./style.css": {
       "import": "./dist/style.css",
