@@ -21,7 +21,7 @@ const themeColors = {
   success: palette.green,
   danger: palette.red,
   failure: palette.red,
-  active: palette.orange["600"],
+  active: palette.blue["600"],
   "side-menu-bg": "#fbfbfb",
 };
 
