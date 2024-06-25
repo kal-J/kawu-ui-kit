@@ -23,7 +23,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "echo Not-implemented"
+    "test": "echo Not-implemented",
+    "np-publish": "npm run build && npx np"
   },
   "dependencies": {
     "react": "^18.2.0",
