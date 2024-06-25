@@ -7,8 +7,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/lib/index.ts'),
-      name: 'tiv-ui-kit',
-      fileName: (format) => `tiv-ui-kit.${format}.js`
+      name: 'kawu-ui-kit',
+      fileName: (format) => `kawu-ui-kit.${format}.js`
     },
     rollupOptions: {
       external: ['react', 'react-dom'],

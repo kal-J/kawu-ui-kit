@@ -1,16 +1,16 @@
 {
-  "name": "tiv-ui-kit",
+  "name": "kawu-ui-kit",
   "version": "0.0.1",
   "type": "module",
   "description": "TIV UI kit",
   "files": [
     "dist/*"
   ],
-  "main": "./dist/tiv-ui-kit.umd.js",
-  "module": "./dist/tiv-ui-kit.es.js",
+  "main": "./dist/kawu-ui-kit.umd.js",
+  "module": "./dist/kawu-ui-kit.es.js",
   "exports": {
     ".": {
-      "import": "./dist/tiv-ui-kit.es.js",
+      "import": "./dist/kawu-ui-kit.es.js",
       "require": "./dist/ta-ui-kit.umd.js"
     },
     "./style.css": {
