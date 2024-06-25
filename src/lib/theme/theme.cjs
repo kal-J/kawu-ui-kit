@@ -4,6 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
 const palette = {
+  blue: colors.blue,
   orange: colors.orange,
   green: colors.green,
   red: colors.red,
@@ -15,8 +16,8 @@ const palette = {
 const themeColors = {
   background: palette.white,
   foreground: palette.black,
-  primary: palette.orange,
-  secondary: palette.orange,
+  primary: palette.blue,
+  secondary: palette.blue,
   success: palette.green,
   danger: palette.red,
   failure: palette.red,
